@@ -1,0 +1,137 @@
+[
+  {
+    "type": "domain",
+    "value": "buguard.io",
+    "source": "scan",
+    "tags": ["prod"],
+    "metadata": {"registrar": "Namecheap", "environment": "production"}
+  },
+  {
+    "type": "subdomain",
+    "value": "api.buguard.io",
+    "source": "scan",
+    "tags": ["prod", "api"],
+    "parent": "buguard.io",
+    "resolves_to": "203.0.113.10",
+    "metadata": {"environment": "production"}
+  },
+  {
+    "type": "subdomain",
+    "value": "staging.buguard.io",
+    "source": "scan",
+    "tags": ["staging"],
+    "parent": "buguard.io",
+    "metadata": {"environment": "staging"}
+  },
+  {
+    "type": "subdomain",
+    "value": "dev.buguard.io",
+    "source": "scan",
+    "tags": ["dev"],
+    "parent": "buguard.io",
+    "metadata": {"environment": "development"}
+  },
+  {
+    "type": "ip_address",
+    "value": "203.0.113.10",
+    "source": "scan",
+    "tags": ["prod"],
+    "metadata": {"cloud": "aws", "region": "us-east-1"}
+  },
+  {
+    "type": "ip_address",
+    "value": "198.51.100.44",
+    "source": "scan",
+    "tags": ["staging"],
+    "metadata": {"cloud": "aws", "region": "us-west-2"}
+  },
+  {
+    "type": "service",
+    "value": "https://api.buguard.io:443",
+    "source": "scan",
+    "tags": ["prod"],
+    "runs_on": "203.0.113.10",
+    "metadata": {"protocol": "https", "port": 443, "exposed": true, "sensitive": true}
+  },
+  {
+    "type": "service",
+    "value": "ssh://203.0.113.10:22",
+    "source": "scan",
+    "tags": ["prod"],
+    "metadata": {"protocol": "ssh", "port": 22, "exposed": true, "sensitive": true}
+  },
+  {
+    "type": "service",
+    "value": "http://staging.buguard.io:8080",
+    "source": "scan",
+    "tags": ["staging"],
+    "metadata": {"protocol": "http", "port": 8080, "exposed": false}
+  },
+  {
+    "type": "certificate",
+    "value": "CN=*.buguard.io",
+    "source": "scan",
+    "tags": ["prod"],
+    "covers": "buguard.io",
+    "metadata": {"issuer": "Let's Encrypt", "expires": "2025-03-01T00:00:00Z", "san": ["*.buguard.io", "buguard.io"]}
+  },
+  {
+    "type": "certificate",
+    "value": "CN=api.buguard.io",
+    "source": "scan",
+    "tags": ["prod"],
+    "covers": "api.buguard.io",
+    "metadata": {"issuer": "DigiCert", "expires": "2024-11-15T00:00:00Z"}
+  },
+  {
+    "type": "certificate",
+    "value": "CN=staging.buguard.io",
+    "source": "scan",
+    "tags": ["staging"],
+    "covers": "staging.buguard.io",
+    "metadata": {"issuer": "Let's Encrypt", "expires": "2026-07-10T00:00:00Z"}
+  },
+  {
+    "type": "certificate",
+    "value": "CN=dev.buguard.io",
+    "source": "scan",
+    "tags": ["dev"],
+    "covers": "dev.buguard.io",
+    "metadata": {"issuer": "Internal CA", "expires": "2027-01-01T00:00:00Z"}
+  },
+  {
+    "type": "technology",
+    "value": "nginx/1.24.0",
+    "source": "scan",
+    "tags": ["prod"],
+    "metadata": {"category": "web_server", "eol": false}
+  },
+  {
+    "type": "technology",
+    "value": "OpenSSL 1.0.2",
+    "source": "scan",
+    "tags": ["prod"],
+    "metadata": {"category": "crypto_library", "eol": true, "end_of_life": true}
+  },
+  {
+    "type": "technology",
+    "value": "PostgreSQL 15.4",
+    "source": "scan",
+    "tags": ["prod", "data"],
+    "metadata": {"category": "database", "eol": false}
+  },
+  {
+    "type": "technology",
+    "value": "Python 3.8",
+    "source": "scan",
+    "tags": ["staging"],
+    "metadata": {"category": "runtime", "eol": true}
+  },
+  {
+    "type": "domain",
+    "value": "darkatlas.internal",
+    "source": "manual",
+    "tags": ["dev"],
+    "metadata": {"environment": "development", "internal": true}
+  }
+]
