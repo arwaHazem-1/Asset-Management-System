@@ -1,6 +1,5 @@
-# DarkAtlas Asset Management (Track B)
+# DarkAtlas Asset Management
 
-This is my submission for Buguard's **Track B — AI Applications** internship task.
 
 DarkAtlas is Buguard's attack surface monitoring platform. This repo is a self-contained slice of its **Asset Management** module: ingest scan results, deduplicate them, track lifecycle and relationships in PostgreSQL, and run four LangChain analysis features on top of the *actual* stored data — never on whatever the model feels like making up.
 
